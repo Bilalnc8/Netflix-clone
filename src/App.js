@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState, useEffect, useTable } from 'react';
 import {AiFillCaretLeft} from "react-icons/ai";
 import {MdChevronLeft, MdChevronRight} from "react-icons/md"; 
+import MoreInfo from './components/MoreInfo';
 
 
 
@@ -64,6 +65,11 @@ const calls = () => {
     slider.scrollLeft = slider.scrollLeft - 500
   }
 
+  const caller = () => {
+    console.log("hi")
+    
+  }
+
   useEffect(() => {
     calls();
   }, []);
@@ -114,7 +120,7 @@ const calls = () => {
       final.push(pics.poster_path) 
   
       return(
-        <img  src={`${url}${pics.poster_path}`} />
+        <img  src={`${url}${pics.poster_path}`} onClick={caller} />
       )
     
     })}
@@ -125,9 +131,10 @@ const calls = () => {
   <div>
 
   <img  src='https://image.tmdb.org/t/p/w200/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg' />
-dededs
+
   </div>
 
+  <MoreInfo />
   
     </div>
   );
