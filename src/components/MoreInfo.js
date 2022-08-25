@@ -1,10 +1,14 @@
 import React from 'react'
 
-const MoreInfo = ({backdrop_path, title, vote_average, overvirew}) => {
- console.log('more')
+const MoreInfo = ({movie, movieArray, url}) => {
+
+  const [history, setHistory] = useState([])
+
   return (
-    <div> himmmmmmmmmmmmmmm
-    <img  src='https://image.tmdb.org/t/p/w200/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg' />
+    <div className='moreInfo'> 
+    // map
+    then indivually call things and then append id into the hsitory state<img  src={`${url}${movieArray[movie].backdrop_path}`} />
+    
     </div>
   )
 }

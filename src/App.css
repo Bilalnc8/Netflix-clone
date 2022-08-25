@@ -94,3 +94,12 @@ p{
   word-wrap: break-word;
   width: 400px;
 }
+
+.moreInfo {
+  position: absolute;
+  top: 0px;
+  left: 260px;
+  width: 1000px;
+  height: 100vh;
+  background-color: blue;
+}

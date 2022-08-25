@@ -22,6 +22,7 @@ function App() {
   const [showSlider, setShowSlider] = useState(false)
   const [clicked, setClicked] = useState(false)
   const [random, setRandom] = useState(false)
+  const [moreInfoMovie, setMoreInfoMovie] = useState(null)
   
   
 
@@ -139,7 +140,7 @@ const calls = () => {
       return(
         <img key={index} src={`${url}${pics.poster_path}`} onClick={() => {
           setClicked(!clicked)
-          
+          setMoreInfoMovie(index)
         }} />
       )
     })}
@@ -149,11 +150,10 @@ const calls = () => {
   </div> 
   <div>
 
-  <img  src='https://image.tmdb.org/t/p/w200/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg' />
 
   </div>
 
-  {clicked ?  <MoreInfo /> : null}
+  {clicked ?  <MoreInfo movie={moreInfoMovie} movieArray={images} url={url}/> : null}
 
     </div>
   );
