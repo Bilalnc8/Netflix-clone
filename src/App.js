@@ -20,6 +20,8 @@ function App() {
   const url = 'https://image.tmdb.org/t/p/w200'
   const [coverPicture, setCoverPicture] = useState([]) 
   const [showSlider, setShowSlider] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  const [random, setRandom] = useState(false)
   
   
 
@@ -67,8 +69,21 @@ const calls = () => {
 
   const caller = () => {
     console.log("hi")
+    return (
+      <div>
+      ss
+      <p>sssssss</p>
+      </div>
+      )
+
+    
     
   }
+
+  useEffect(() => {
+    clicked ?  caller() : setRandom(true)
+  }, [clicked]);
+
 
   useEffect(() => {
     calls();
@@ -99,7 +114,9 @@ const calls = () => {
    
   <div className='coverInfo'> 
     <h1> {coverPicture.title} </h1>
-    <button> Play </button>
+    <button onClick={() => {
+      setClicked(!clicked)
+      return(<MoreInfo/>)}}> Play </button>
     <button> Add to my list </button>
     <p> {coverPicture.overview} </p>
   </div>
@@ -120,9 +137,11 @@ const calls = () => {
       final.push(pics.poster_path) 
   
       return(
-        <img  src={`${url}${pics.poster_path}`} onClick={caller} />
+        <img key={index} src={`${url}${pics.poster_path}`} onClick={() => {
+          setClicked(!clicked)
+          
+        }} />
       )
-    
     })}
     </div>
 
@@ -134,8 +153,8 @@ const calls = () => {
 
   </div>
 
-  <MoreInfo />
-  
+  {clicked ?  <MoreInfo /> : null}
+
     </div>
   );
 }
