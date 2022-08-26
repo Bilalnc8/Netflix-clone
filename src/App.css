@@ -102,4 +102,6 @@ p{
   width: 1000px;
   height: 100vh;
   background-color: blue;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
