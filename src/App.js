@@ -3,7 +3,7 @@ import Background from './components/Background';
 import SearchBar from './components/SearchBar';
 import 'remixicon/fonts/remixicon.css'
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect  } from 'react';
 import {AiFillCaretLeft} from "react-icons/ai";
 import {MdChevronLeft, MdChevronRight} from "react-icons/md"; 
 import MoreInfo from './components/MoreInfo';

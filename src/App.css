@@ -75,7 +75,7 @@ button {
 
 .coverPicture {
   color: white;
-  object-fit: coverx;
+  object-fit: cover;
   width: 100%;
   height: 618px;
 }
@@ -96,12 +96,37 @@ p{
 }
 
 .moreInfo {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 260px;
   width: 1000px;
-  height: 100vh;
-  background-color: blue;
-  overflow-y: auto;
+  height: 200vh;
+  overflow-y: scroll;
   overflow-x: hidden;
+  
+}
+
+.moreInfoImage {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%)
+
+}
+
+.ipsum {
+  position: relative;
+  top: 350px;
+  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%)
+
+}
+
+.filte {
+  position: absolute;
+  top: 30px;
+  box-shadow: 0px -10px 10px 10px lightgrey 
+  
+}
+.Box {
+  box-shadow: 0px -10px 10px 10px lightgrey 
 }
