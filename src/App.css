@@ -107,24 +107,27 @@ p{
 }
 
 .moreInfoImage {
-  width: 100%;
-  height: 350px;
+  width: 64.71%;
+  height: 550px;
+  position: fixed;
   object-fit: cover;
-  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%)
-
+  
+  
 }
 
 .ipsum {
   position: relative;
-  top: 350px;
+  top: 550px;
+  
   
 
 }
 
 .filte {
   position: absolute;
-  top: 339px;
+  top: 539px;
   padding: 35px 999px 25px 5px; 
-  box-shadow: 0px -15px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -15px 10px 28px rgba(0, 0, 0, 0.5);
+  
   
 }
