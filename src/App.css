@@ -96,11 +96,11 @@ p{
 }
 
 .moreInfo {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 260px;
   width: 1000px;
-  height: 200vh;
+  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   
