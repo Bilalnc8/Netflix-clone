@@ -1,3 +1,4 @@
+import { getByTitle } from '@testing-library/react';
 import React from 'react'
 import { useState, useEffect } from 'react';
 
@@ -12,6 +13,7 @@ const MoreInfo = ({movie, movieArray, url}) => {
   
   // <img className='moreInfoImage' src={`${url}${movieArray[movie].backdrop_path}`} /> 
 
+  console.log(movieArray[0])
   
   
 
@@ -34,7 +36,10 @@ const MoreInfo = ({movie, movieArray, url}) => {
   }}> 
   </div>
   
-<div className='filte'> peaky ndekdnwedkwendkkdwekdnwekd
+<div className='filte'> 
+<h1 className='movieTitle'>{movieArray[movie].title}</h1>
+<div className='release_data'> {movieArray[movie].release_date} </div>
+peaky jjjndekdnwedkwendkkdwekdnwekd
 dnwkedkwednw
 dknwendkwend
 dknewdnewkd'
