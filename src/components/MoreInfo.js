@@ -1,6 +1,10 @@
 import { getByTitle } from '@testing-library/react';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { AiOutlinePlus, AiOutlineLike, AiOutlineVerticalAlignBottom } from "react-icons/ai";
+import { FcAbout } from "react-icons/fc";
+import MoreLike from './MoreLike';
+
 
 
 // make the background scroll bar hidden
@@ -8,18 +12,18 @@ import { useState, useEffect } from 'react';
 const MoreInfo = ({movie, movieArray, url}) => {
 
   const [history, setHistory] = useState([])
+  const style = { color: "white", fontSize: "1.5em" }
   // map
   // then indivually call things and then append id into the hsitory state
   
   // <img className='moreInfoImage' src={`${url}${movieArray[movie].backdrop_path}`} /> 
 
-  console.log(movieArray[0])
+ 
   
   
 
   return (
     <div className='moreInfo' onWheel={ event => {
-      console.log(event)
       if (event.nativeEvent.deltaY > 0) {
         console.log('scroll up');
       } else {
@@ -39,46 +43,18 @@ const MoreInfo = ({movie, movieArray, url}) => {
 <div className='filte'> 
 <h1 className='movieTitle'>{movieArray[movie].title}</h1>
 <div className='release_data'> {movieArray[movie].release_date} </div>
-peaky jjjndekdnwedkwendkkdwekdnwekd
-dnwkedkwednw
-dknwendkwend
-dknewdnewkd'
-ndekdnwedkwendkkdwekdnwekddnkwdnkw
-datadkwndk
-dknewdnewkdwd
-wed
-we
-defaultwd
-wed
-w
-ed
-wed
-d
-ewdw
-datadqw
-d
-qdq
-dataqwd
-qwd
-qw
-d
-qwd
-qw
-d
-qwd
-qw
-dq
-wheelDeltaqwd
-qwd
-q
-wdq
-wheelDeltaqwdqd
-qwdqwdqwdddddddddddddddddddddddddddddq
-wqdwqdDWDD QEWDEFEWF
-EWFEWFWEFEWF  FFEWFEWFEWF
-EWF EWFEWQFWEQFEQWFWQEFWQEFWEQFWE WEF
-WE
-FWEFEWFWEFEWFEQWFEFGRQGER</div>  
+<p> {movieArray[movie].overview} </p>
+<p> Cast: Not available </p>
+<p> Director: Not available </p>
+
+<div className='icon'> 
+  <AiOutlinePlus /> <AiOutlineLike /> <AiOutlineVerticalAlignBottom />
+
+
+</div>
+</div>  
+
+<MoreLike originalMovie={movieArray[movie]} />
 
 <div onWheel={ event => {
   console.log(event)
