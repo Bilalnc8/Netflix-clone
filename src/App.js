@@ -8,8 +8,6 @@ import MoreInfo from './components/MoreInfo';
 import MovieRows from './components/MovieRows';
 import CoverPicture from './components/CoverPicture';
 
-//  Upcoming Movies 
-<MovieRows api={"https://api.themoviedb.org/3/movie/upcoming?api_key=204359bfca7315f436f5a955973dc3b0&language=en-US&page=1"} />
 
 
 function App() {
@@ -23,9 +21,11 @@ function App() {
     <CoverPicture />
 
     Popular Movies
-    <MovieRows api={"https://api.themoviedb.org/3/movie/popular?api_key=204359bfca7315f436f5a955973dc3b0&language=en-US&page=1"}/>
+    <MovieRows api={"https://api.themoviedb.org/3/movie/popular?api_key=204359bfca7315f436f5a955973dc3b0&language=en-US&page=1"} sliderId={'popular'}/>
 
    
+    Upcoming Movies 
+<MovieRows api={"https://api.themoviedb.org/3/movie/upcoming?api_key=204359bfca7315f436f5a955973dc3b0&language=en-US&page=1"} sliderId={"upcoming"}/>
 dqdq
     </div>
   );

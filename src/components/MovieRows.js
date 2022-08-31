@@ -6,7 +6,7 @@ import {AiFillCaretLeft} from "react-icons/ai";
 import {MdChevronLeft, MdChevronRight} from "react-icons/md"; 
 import MoreInfo from './MoreInfo';
 
-const MovieRows = ({api}) => {
+const MovieRows = ({api, sliderId}) => {
 
   const [images, setImages] = useState([])
   const [final, setFinal] = useState([])
@@ -37,12 +37,12 @@ axios.get(api)
   
 
   const moveRight = () => {
-    let slider = document.getElementById('slider')
+    let slider = document.getElementById(sliderId)
     slider.scrollLeft = slider.scrollLeft + 500
   }
 
   const moveLeft = () => {
-    let slider = document.getElementById('slider')
+    let slider = document.getElementById(sliderId)
     slider.scrollLeft = slider.scrollLeft - 500
   }
 
@@ -67,7 +67,8 @@ axios.get(api)
   
 
 
-  const onSlider = (event, downOrLeave) => {
+  const onSlider = (event, downOrLeave, random) => { 
+    console.log(random)
     downOrLeave ? setShowSlider(true): setShowSlider(false)
 
   }
@@ -86,11 +87,12 @@ axios.get(api)
    </div> 
     
   
-   <div onMouseEnter={event => onSlider(event, true)}  onMouseLeave={event => onSlider(event, false)}>  
+   <div>  
+ 
+  <div id={sliderId} className='result'  onMouseEnter={event =>{ (onSlider(event, true, event.currentTarget.id
+    ))}}  onMouseLeave={event => onSlider(event, false)}>
   <MdChevronLeft size={40} onClick={moveLeft} className='leftButton' style={{visibility: showSlider ? 'visible': 'hidden'}}/> 
   <MdChevronRight size={40} onClick={moveRight} className='RightButton' style={{visibility: showSlider ? 'visible': 'hidden'}}/>
-  <div id='slider' className='result' >
-
   
    
   {images.map((pics, index) => {
