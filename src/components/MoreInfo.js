@@ -13,6 +13,10 @@ const MoreInfo = ({movie, movieArray, url}) => {
 
   const [history, setHistory] = useState([])
   const style = { color: "white", fontSize: "1.5em" }
+  const [top, setTop] = useState(539)
+  const scrollSpeed = 5
+  var distance = '539px'
+  
   // map
   // then indivually call things and then append id into the hsitory state
   
@@ -26,8 +30,14 @@ const MoreInfo = ({movie, movieArray, url}) => {
     <div className='moreInfo' onWheel={ event => {
       if (event.nativeEvent.deltaY > 0) {
         console.log('scroll up');
+        setTop((top) => top - scrollSpeed)
+        console.log(top)
+        distance = top + "px"
       } else {
         console.log('scroll down');
+        setTop((top) => top + scrollSpeed)
+        console.log(top)
+        console.log(top + "px")
       }
     }}
     > 
@@ -40,8 +50,8 @@ const MoreInfo = ({movie, movieArray, url}) => {
   }}> 
   </div>
   
-<div className='filte'> 
-<h1 className='movieTitle'>{movieArray[movie].title}</h1>
+<div className='filte' style={{top: top + 'px'}} > 
+<h1 className='movieTitle' >{movieArray[movie].title}</h1>
 <div className='release_data'> {movieArray[movie].release_date} </div>
 <p> {movieArray[movie].overview} </p>
 <p> Cast: Not available </p>

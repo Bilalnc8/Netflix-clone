@@ -33,7 +33,6 @@ const MoreLike = ({originalMovie}) => {
     <div>
     
     {recommendArray.slice(0,8).map((posters, index) => {
-        console.log(posters.backdrop_path)
         return(
           <img key={index} src={`${url}${posters.poster_path}`} />
         )
