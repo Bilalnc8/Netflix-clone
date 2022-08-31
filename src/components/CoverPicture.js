@@ -7,6 +7,7 @@ const CoverPicture = () => {
   const [clicked, setClicked] = useState(false)
   const [random, setRandom] = useState(false)
   const [coverPicture, setCoverPicture] = useState([]) 
+  
 
   useEffect(() => {
     calls();
