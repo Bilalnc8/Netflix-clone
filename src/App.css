@@ -4,7 +4,8 @@
   margin:0;
   padding: 0;
   background-color: black;
-  color: white;
+  color: #ffffff;
+  overflow-y: hidden; /* Hide horizontal scrollbar */
 }
 .app{
   min-height: 100vh;

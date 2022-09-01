@@ -14,7 +14,7 @@ const MoreInfo = ({movie, movieArray, url}) => {
   const [history, setHistory] = useState([])
   const style = { color: "white", fontSize: "1.5em" }
   const [top, setTop] = useState(539)
-  const scrollSpeed = 5
+  const scrollSpeed = 15
   var distance = '539px'
   
   // map
@@ -23,7 +23,7 @@ const MoreInfo = ({movie, movieArray, url}) => {
   // <img className='moreInfoImage' src={`${url}${movieArray[movie].backdrop_path}`} /> 
 
  
-  
+  // add play button thing
   
 
   return (
