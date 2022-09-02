@@ -31,7 +31,7 @@ const MoreLike = ({originalMovie}) => {
     
     {recommendArray.slice(0,8).map((posters, index) => {
         return(
-          <div className='recommendationPics'>
+          <div className='recommendationPicsss'>
           <img className='recommendationPic' key={index} src={`${url}${posters.backdrop_path}`} />
           
           </div>

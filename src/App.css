@@ -158,6 +158,9 @@ p{
 
 .recommendationCover {
   width: 100%;
+  border: 10px solid red;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .recommendationPics {
@@ -168,7 +171,8 @@ p{
 }
 
 .recommendationPic{
-  min-width: 100%;
+  min-width: 40%;
   height: auto;
   object-fit: cover;
+  border: 1px solid red;
 }
