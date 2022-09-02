@@ -7,6 +7,7 @@
   color: #ffffff;
   overflow-y: hidden; /* Hide horizontal scrollbar */
 }
+
 .app{
   min-height: 100vh;
   max-height: auto;
@@ -127,8 +128,7 @@ p{
 .filte {
   position: absolute;
   top: 539px;
-  right: -250px;
-  padding: 35px 999px 25px 5px; 
+  width: 100%;
   box-shadow: 0px -25px 10px 38px rgba(0, 0, 0, 0.5);
   color: white;
   
@@ -154,4 +154,21 @@ p{
   margin-left: 40px;
   background-color: transparent;
   font-size: 60px;
+}
+
+.recommendationCover {
+  width: 100%;
+}
+
+.recommendationPics {
+  min-width: 100%;
+  color: aqua;
+  height: auto;
+  
+}
+
+.recommendationPic{
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
 }

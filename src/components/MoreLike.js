@@ -15,26 +15,26 @@ const MoreLike = ({originalMovie}) => {
         //await(response)
     .then(response => {
         setRecommendArray(response.data.results)
+        
     }
-
-      
+    
     )
     .catch(err => {
       console.error(err);
     });
-        
-
-    
 
 
   //  recommendArray.length <= 7 ? AddRecommedation : setRecommendArray(true) 
 
   return (
-    <div>
+    <div className='recommendationCover'>
     
     {recommendArray.slice(0,8).map((posters, index) => {
         return(
-          <img key={index} src={`${url}${posters.poster_path}`} />
+          <div className='recommendationPics'>
+          <img className='recommendationPic' key={index} src={`${url}${posters.backdrop_path}`} />
+          
+          </div>
         )
       })}
     dewdw

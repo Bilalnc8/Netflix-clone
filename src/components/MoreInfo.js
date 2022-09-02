@@ -29,15 +29,11 @@ const MoreInfo = ({movie, movieArray, url}) => {
   return (
     <div className='moreInfo' onWheel={ event => {
       if (event.nativeEvent.deltaY > 0) {
-        console.log('scroll up');
         setTop((top) => top - scrollSpeed)
-        console.log(top)
         distance = top + "px"
       } else {
-        console.log('scroll down');
         setTop((top) => top + scrollSpeed)
-        console.log(top)
-        console.log(top + "px")
+        
       }
     }}
     > 
@@ -62,9 +58,11 @@ const MoreInfo = ({movie, movieArray, url}) => {
 
 
 </div>
+
+<MoreLike className='wow' originalMovie={movieArray[movie]} />
 </div>  
 
-<MoreLike originalMovie={movieArray[movie]} />
+
 
 <div onWheel={ event => {
   console.log(event)
