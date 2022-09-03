@@ -14,6 +14,7 @@ const MoreInfo = ({movie, movieArray, url}) => {
   const [history, setHistory] = useState([])
   const style = { color: "white", fontSize: "1.5em" }
   const [top, setTop] = useState(539)
+  const [topTitle, setTopTitle] = useState(470)
   const scrollSpeed = 15
   var distance = '539px'
   
@@ -30,9 +31,11 @@ const MoreInfo = ({movie, movieArray, url}) => {
     <div className='moreInfo' onWheel={ event => {
       if (event.nativeEvent.deltaY > 0) {
         setTop((top) => top - scrollSpeed)
+        setTopTitle((topTitle) => topTitle - scrollSpeed)
         distance = top + "px"
       } else {
         setTop((top) => top + scrollSpeed)
+        setTopTitle((topTitle) => topTitle + scrollSpeed)
         
       }
     }}
@@ -45,13 +48,14 @@ const MoreInfo = ({movie, movieArray, url}) => {
     
   }}> 
   </div>
-  
+
 <div className='filte' style={{top: top + 'px'}} > 
-<h1 className='movieTitle' >{movieArray[movie].title}</h1>
+
 <div className='release_data'> {movieArray[movie].release_date} </div>
 <p> {movieArray[movie].overview} </p>
 <p> Cast: Not available </p>
 <p> Director: Not available </p>
+
 
 <div className='icon'> 
   <AiOutlinePlus /> <AiOutlineLike /> <AiOutlineVerticalAlignBottom />
@@ -61,7 +65,7 @@ const MoreInfo = ({movie, movieArray, url}) => {
 
 <MoreLike className='wow' originalMovie={movieArray[movie]} />
 </div>  
-
+<h1 className='movieTitle' style={{top: topTitle + 'px'}} >{movieArray[movie].title}</h1>
 
 
 <div onWheel={ event => {
