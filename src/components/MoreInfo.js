@@ -52,10 +52,12 @@ const MoreInfo = ({movie, movieArray, url}) => {
 <div className='filte' style={{top: top + 'px'}} > 
 
 <div className='release_data'> {movieArray[movie].release_date} </div>
-<p> {movieArray[movie].overview} </p>
+
+<div className='movieOverview'> {movieArray[movie].overview} </div>
+<div className='details'>
 <p> Cast: Not available </p>
 <p> Director: Not available </p>
-
+</div>
 
 <div className='icon'> 
   <AiOutlinePlus /> <AiOutlineLike /> <AiOutlineVerticalAlignBottom />

@@ -170,9 +170,18 @@ p{
   
 }
 
-.recommendationPic{
+.recommendationPic {
   min-width: 90%;
   height: auto;
   object-fit: cover;
   border: 1px solid red;
+}
+
+.movieOverview {
+  margin: 20px 0px 0px 60px;
+  max-width: 40%;
+}
+
+.details {
+  margin: 20px 0px 0px 60px;
 }
