@@ -5,7 +5,11 @@ import { useState, useEffect  } from 'react';
 import {AiFillCaretLeft} from "react-icons/ai";
 import {MdChevronLeft, MdChevronRight} from "react-icons/md"; 
 import MoreInfo from './MoreInfo';
+import Modal from 'react-modal'
+import { click } from '@testing-library/user-event/dist/click';
 
+Modal.setAppElement('#root')
+// use after open
 const MovieRows = ({api, sliderId}) => {
 
   const [images, setImages] = useState([])
@@ -84,6 +88,8 @@ axios.get(api)
     NetFlix
    <button> Search </button>
    <button> Logout </button>  
+   <button> {clicked} </button>
+   
    </div> 
     
   
@@ -101,8 +107,9 @@ axios.get(api)
   
       return(
         <img key={index} src={`${url}${pics.poster_path}`} onClick={() => {
-          setClicked(!clicked)
+          setClicked(true)
           setMoreInfoMovie(index)
+          console.log(clicked + " rows")
         }} />
       )
     })}
@@ -114,9 +121,9 @@ axios.get(api)
 
 
   </div>
-
-  {clicked ?  <MoreInfo movie={moreInfoMovie} movieArray={images} url={url}/> : null}
-
+<Modal className='modal' isOpen={clicked} onRequestClose={() => setClicked(false)} preventScroll={true}> 
+  <MoreInfo movie={moreInfoMovie} movieArray={images} url={url} click={clicked} close={() => setClicked(!clicked)}/> 
+</Modal>
     
     
     </div>

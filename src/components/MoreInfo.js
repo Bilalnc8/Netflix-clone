@@ -1,15 +1,17 @@
 import { getByTitle } from '@testing-library/react';
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AiOutlinePlus, AiOutlineLike, AiOutlineVerticalAlignBottom } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
 import MoreLike from './MoreLike';
+import onClickOutside from 'react-onclickoutside'
+
 
 
 
 // make the background scroll bar hidden
 
-const MoreInfo = ({movie, movieArray, url}) => {
+const MoreInfo = ({movie, movieArray, url, close, click}) => {
 
   const [history, setHistory] = useState([])
   const style = { color: "white", fontSize: "1.5em" }
@@ -17,28 +19,53 @@ const MoreInfo = ({movie, movieArray, url}) => {
   const [topTitle, setTopTitle] = useState(470)
   const scrollSpeed = 15
   var distance = '539px'
+  const componentRef = useRef();
   
   // map
+  
   // then indivually call things and then append id into the hsitory state
   
   // <img className='moreInfoImage' src={`${url}${movieArray[movie].backdrop_path}`} /> 
 
  
   // add play button thing
+
   
+  
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+    function handleClick(e) {
+        if(componentRef && componentRef.current){
+          console.log("hiiii")
+            const ref = componentRef.current
+            if(!ref.contains(e.target)){
+                console.log("more info box was not clicked")
+               // console.log(clicked)
+                //if(clicked === true){ 
+                
+               // }
+            }
+        }
+    }
+}, []);
 
   return (
-    <div className='moreInfo' onWheel={ event => {
-      if (event.nativeEvent.deltaY > 0) {
-        setTop((top) => top - scrollSpeed)
-        setTopTitle((topTitle) => topTitle - scrollSpeed)
-        distance = top + "px"
-      } else {
-        setTop((top) => top + scrollSpeed)
-        setTopTitle((topTitle) => topTitle + scrollSpeed)
-        
-      }
-    }}
+    <div>
+    {click ? 
+ 
+      <div className='moreInfo' onWheel={ event => {
+        if (event.nativeEvent.deltaY > 0) {
+          setTop((top) => top - scrollSpeed)
+          setTopTitle((topTitle) => topTitle - scrollSpeed)
+          distance = top + "px"
+        } else {
+          setTop((top) => top + scrollSpeed)
+          setTopTitle((topTitle) => topTitle + scrollSpeed)
+          
+        }
+      }}
+      ref={componentRef}
     > 
 
       <div className='moreInfoImage' 
@@ -80,8 +107,11 @@ const MoreInfo = ({movie, movieArray, url}) => {
 }}
 >
  scroll on me!xednewdnewjdnwejdnwejd
-</div>
+</div> 
     </div>
+     : null }
+    </div>
+    
   )
 }
 
