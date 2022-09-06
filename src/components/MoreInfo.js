@@ -20,6 +20,8 @@ const MoreInfo = ({movie, movieArray, url, close, click}) => {
   const scrollSpeed = 15
   var distance = '539px'
   const componentRef = useRef();
+
+  console.log("jedjend")
   
   // map
   
